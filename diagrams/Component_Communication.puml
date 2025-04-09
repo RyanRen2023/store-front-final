@@ -1,0 +1,37 @@
+@startuml
+title Vue.js Component Communication - BestBuy Frontend
+
+skinparam componentStyle rectangle
+
+component App.vue
+component TopNav
+component ProductList
+component ProductDetail
+component ShoppingCart
+component RouterView
+
+note right of App.vue
+  - products fetched via fetch('/products')
+  - cartItems managed in App.vue
+end note
+
+App.vue --> TopNav : pass cartItemCount (prop)
+TopNav --> App.vue : display only
+
+App.vue --> ProductList : pass products (prop)
+ProductList --> App.vue : @addToCart
+
+App.vue --> ProductDetail : pass products (prop)
+ProductDetail --> App.vue : @addToCart
+
+App.vue --> ShoppingCart : pass cartItems (prop)
+ShoppingCart --> App.vue : @removeFromCart  
+ShoppingCart --> App.vue : @submitOrder
+
+App.vue --> RouterView : renders route components
+
+RouterView --> ProductList
+RouterView --> ProductDetail
+RouterView --> ShoppingCart
+
+@enduml
