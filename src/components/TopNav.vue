@@ -2,7 +2,7 @@
   <nav>
     <div class="logo">
       <a href="/">
-        <img src="/algonquin-pet-store.png" alt="Algonquin Pet Store Logo">
+        <img src="/Bestbuy-logo.png" alt="Algonquin Bestbuy Logo">
       </a>
     </div>
     <button class="hamburger" @click="toggleNav">
