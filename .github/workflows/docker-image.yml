@@ -8,13 +8,13 @@ on:
 
 jobs:
 
-  build:
+  Build:
 
     runs-on: ubuntu-latest
 
     steps:
     - name: Checkout code
-    - uses: actions/checkout@v3
+      uses: actions/checkout@v3
 
     - name: Install Dependencies
       run: echo "Simulating Install Dependencies... Install Dependencies completed successfully!"
@@ -63,6 +63,7 @@ jobs:
   # Step 3: Release Job (Release Docker Image)
   # Package the tested container images with version tags and push them to a container registry.
   Release:
+    # This job is responsible for promoting the tested image to the latest tag.
     runs-on: ubuntu-latest
 
     # Ensure the Release job only runs if Test pass
